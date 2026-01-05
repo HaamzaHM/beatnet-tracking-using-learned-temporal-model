@@ -8,8 +8,8 @@ The LTM was trained on **1,696 beat and downbeat annotations** from two publicly
 
 | Dataset | Samples | Genre | Source |
 |---------|---------|-------|--------|
-| Ballroom | 698 | Dance Music | [BeatNet Paper](https://arxiv.org/abs/2108.03576) |
-| GTZAN | 998 | Mixed Music | [GTZAN Dataset](http://marsyas.info/download/datasets_music/) |
+| Ballroom | 698 | Dance Music | [Ballroom Dataset](https://mtg.upf.edu/ismir2004/contest/tempoContest/node5.html) |
+| GTZAN | 998 | Mixed Music | [GTZAN Dataset](https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification) |
 | **Total** | **1,696** | Diverse | - |
 
 ## Dataset Descriptions
@@ -26,7 +26,9 @@ The LTM was trained on **1,696 beat and downbeat annotations** from two publicly
 - Beat annotations: High quality (manually verified)
 - Downbeat annotations: Clear meter structure
 
-**Source**: Originally from [BeatNet Paper](https://arxiv.org/abs/2108.03576)
+**Source**: [Ballroom Dataset](https://mtg.upf.edu/ismir2004/contest/tempoContest/node5.html)
+
+**Annotations**: [Ballroom Annotations](https://github.com/CPJKU/BallroomAnnotations)
 
 **Why useful**: Regular beat patterns are ideal for training temporal models. Dance music provides consistent, unambiguous beat annotations.
 
@@ -42,7 +44,9 @@ The LTM was trained on **1,696 beat and downbeat annotations** from two publicly
 - Beat annotations: Crowd-sourced and verified
 - Downbeat annotations: Computed from meter estimation
 
-**Source**: [GTZAN Dataset Homepage](http://marsyas.info/download/datasets_music/)
+**Source**: [GTZAN Dataset](https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification)
+
+**Annotations**: [GTZAN Tempo, Beat and Downbeat Annotations](https://github.com/TempoBeatDownbeat/gtzan_tempo_beat)
 
 **Why useful**: Diverse genres ensure the model generalizes well to different music styles and tempos.
 
@@ -51,19 +55,23 @@ The LTM was trained on **1,696 beat and downbeat annotations** from two publicly
 ### Option 1: Ballroom Dataset
 
 ```bash
-# The Ballroom dataset can be obtained from the BeatNet paper authors
-# Visit: https://github.com/mjhydri/BeatNet
-# Or download from: https://github.com/mjhydri/BeatNet/tree/main/data
+# Download Ballroom dataset from:
+# https://mtg.upf.edu/ismir2004/contest/tempoContest/node5.html
+
+# Download annotations from:
+# https://github.com/CPJKU/BallroomAnnotations
+git clone https://github.com/CPJKU/BallroomAnnotations.git
 ```
 
 ### Option 2: GTZAN Dataset
 
 ```bash
-# Download GTZAN from the official source
-wget http://marsyas.info/download/datasets_music/genres.tar.gz
+# Download GTZAN from Kaggle:
+# https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification
 
-# Extract
-tar -xzf genres.tar.gz
+# Download annotations from:
+# https://github.com/TempoBeatDownbeat/gtzan_tempo_beat
+git clone https://github.com/TempoBeatDownbeat/gtzan_tempo_beat.git
 ```
 
 ### Option 3: Use Pre-computed Beat Annotations
@@ -119,30 +127,31 @@ mkdir -p data/GTZAN
 
 **Ballroom**:
 ```bash
-# Clone BeatNet repository for datasets
-git clone https://github.com/mjhydri/BeatNet.git
-cp BeatNet/data/Ballroom/* data/Ballroom/
+# Download from: https://mtg.upf.edu/ismir2004/contest/tempoContest/node5.html
+# Extract to data/Ballroom/
 ```
 
 **GTZAN**:
 ```bash
-# Download GTZAN dataset
-cd data/GTZAN
-wget http://marsyas.info/download/datasets_music/genres.tar.gz
-tar -xzf genres.tar.gz
+# Download from: https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification
+# Extract to data/GTZAN/
 ```
 
-### Step 3: Generate/Obtain Annotations
+### Step 3: Download/Organize Annotations
 
-If you don't have pre-computed annotations, you can:
+**Ballroom Annotations**:
+```bash
+cd data/Ballroom
+git clone https://github.com/CPJKU/BallroomAnnotations.git
+# Organize annotation files into your data/Ballroom/ directory
+```
 
-1. **Use annotations from BeatNet paper** (recommended)
-   - Available in the BeatNet GitHub repository
-   - Already aligned and verified
-
-2. **Generate your own annotations**
-   - Use a beat tracking algorithm
-   - Manual annotation with tools like [Sonic Visualiser](https://www.sonicvisualiser.org/)
+**GTZAN Annotations**:
+```bash
+cd data/GTZAN
+git clone https://github.com/TempoBeatDownbeat/gtzan_tempo_beat.git
+# Organize annotation files into your data/GTZAN/ directory
+```
 
 ### Step 4: Organize Directory Structure
 
@@ -323,8 +332,8 @@ for batch in loader:
 
 For dataset-related issues:
 
-1. **Ballroom**: Check [BeatNet GitHub](https://github.com/mjhydri/BeatNet)
-2. **GTZAN**: See [GTZAN Homepage](http://marsyas.info/download/datasets_music/)
+1. **Ballroom**: Check [Ballroom Annotations](https://github.com/CPJKU/BallroomAnnotations) or [Original Source](https://mtg.upf.edu/ismir2004/contest/tempoContest/node5.html)
+2. **GTZAN**: See [GTZAN Kaggle](https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification) or [Annotations](https://github.com/TempoBeatDownbeat/gtzan_tempo_beat)
 3. **This Project**: Open an issue on [this repository](https://github.com/HaamzaHM/beatnet-tracking-using-learned-temporal-model)
 
 ---

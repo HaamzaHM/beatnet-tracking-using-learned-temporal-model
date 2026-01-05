@@ -191,3 +191,30 @@ BEAT_THRESHOLD = 0.6
 DOWNBEAT_THRESHOLD = 0.9
 MIN_INTER_BEAT_INTERVAL = 0.25  # seconds
 ```
+
+## Contact & Support
+
+If you have questions, suggestions, or encounter issues:
+
+📧 **Email**: [m.hamzamaliik@gmail.com](mailto:m.hamzamaliik@gmail.com)
+
+💼 **LinkedIn**: [hamzamaliik](https://www.linkedin.com/in/hamzamaliik/)
+
+Feel free to reach out for collaboration, feedback, or technical questions about the implementation.
+
+## Citation
+
+If you use this code in your research, please cite:
+
+```bibtex
+@inproceedings{beatnet2021,
+  title={BeatNet: CRNN and Particle Filtering for Online Joint Beat Downbeat and Meter Tracking},
+  author={Heydari, Florian and Couprie, Camille and Dorcarme, François},
+  booktitle={ISMIR},
+  year={2021}
+}
+```
+
+## License
+
+This project builds upon the original BeatNet work. See individual files for specific license information.

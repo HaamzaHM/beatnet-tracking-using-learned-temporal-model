@@ -80,7 +80,7 @@ dmypy.json
 # Datasets (NOT included in GitHub)
 data/Ballroom/
 data/GTZAN/
-data/*.csv
+data/crnn_cache/
 data/*.pkl
 data/*.npy
 
@@ -144,3 +144,12 @@ results/
 !models/ltm_weights.pt
 !requirements.txt
 !setup.py
+
+# Academic submission files (NOT for public repository)
+FINAL_EVALUATION_REPORT.md
+FIXED_PARAMETERS.md
+
+# Datasets (use data/DATA.md for downloading instructions)
+data/Ballroom/
+data/GTZAN/
+data/crnn_cache/
