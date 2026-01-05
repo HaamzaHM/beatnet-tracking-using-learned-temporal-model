@@ -2,7 +2,11 @@
 
 **GitHub Repository**: https://github.com/HaamzaHM/beatnet-tracking-using-learned-temporal-model
 
+**Original Project**: [BeatNet by Mojtaba Heydari](https://github.com/mjhydri/BeatNet) - CC-BY-4.0 License
+
 **Paper Reference**: [BeatNet: CRNN and Particle Filtering for Online Joint Beat Downbeat and Meter Tracking](https://arxiv.org/abs/2108.03576) (ISMIR 2021)
+
+**This Project**: Implementation of LearnedTemporalModel (LTM) as an improvement over the original particle filtering approach.
 
 Real-time beat and downbeat tracking using Convolutional Recurrent Neural Networks (CRNN) with an optimized **Learned Temporal Model (LTM)** inference pipeline.
 
